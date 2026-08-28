@@ -8,6 +8,8 @@ date: 2026-08-01
 authors: "Nguyen, X. T., et al."
 venue: "Submitted to Journal of the American Chemical Society"
 status: "Submitted"
+header:
+  teaser: "projects/pda/pda_semilog_iv.png"
 citation: 'Nguyen, X. T., et al. (2026). &quot;Electric Field-Driven Interfacial Proton-Coupled Electron Transfer in Protonated Polydopamine Junctions.&quot; <i>Submitted to Journal of the American Chemical Society</i>.'
 ---
 

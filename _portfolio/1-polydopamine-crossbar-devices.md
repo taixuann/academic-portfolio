@@ -8,9 +8,11 @@ order: 1
 role: "First Author / Experimental Lead"
 status: "Submitted to JACS (2026)"
 status_class: "status-submitted"
-hero_figure_placeholder: "Schematic crossbar stack (Au/PDA/Pt) and interfacial PCET proton transport diagram"
+header:
+  teaser: "projects/pda/pda_hero_summary.png"
+hero_image: "/images/projects/pda/pda_hero_summary.png"
 hero_caption_title: "Figure 1"
-hero_caption: "Device geometry and proposed field-driven proton-coupled electron transfer interface."
+hero_caption: "Experimental summary showing volatile memristive switching, current-voltage loops, and switching endurance."
 tags:
   - Thin-Film Electropolymerization
   - Crossbar Devices
@@ -38,7 +40,7 @@ section_anchors:
 How does electric field-driven proton dynamics govern volatile versus non-volatile resistive switching thresholds and retention stability in nanoscale polydopamine (PDA) thin films?
 
 ## Project Summary
-Polydopamine is a biomimetic polymer exhibiting coupled electronic and ionic conduction. In this project, we design, fabricate, and characterize thin-film crossbar devices (~40 nm PDA active layer) to elucidate the interfacial proton-coupled electron transfer (PCET) mechanism underlying analog resistance tuning and biological synaptic emulation.
+Polydopamine is a biomimetic polymer exhibiting coupled electronic and ionic conduction. In this project, we design, fabricate, and characterize thin-film crossbar devices to elucidate the interfacial proton-coupled electron transfer (PCET) mechanism underlying analog resistance tuning and biological synaptic emulation.
 
 ## My Contribution
 * Engineered thin-film crossbar junctions (Au/PDA/Pt) via controlled electrodeposition and surface functionalization.
@@ -73,13 +75,9 @@ Controlled electrodeposition of thin polydopamine active layers on patterned bot
 Current-voltage (I–V) sweeps demonstrating bipolar resistive switching, threshold switching behavior, and analog state modulation.
 
 <div class="scientific-figure-slot">
-  <div class="figure-slot-body">
-    <div class="figure-slot-placeholder">
-      [REAL FIGURE REQUIRED: Semi-logarithmic DC I–V hysteresis loops showing Set/Reset voltages and ON/OFF window]
-    </div>
-  </div>
+  <img src="{{ base_path }}/images/projects/pda/pda_semilog_iv.png" alt="DC I-V Hysteresis" style="width:100%; max-height:450px; object-fit:contain; display:block; background:#fff;">
   <div class="figure-slot-caption">
-    <strong>Fig 3</strong> | DC I–V hysteresis characteristics demonstrating reproducible bipolar switching.
+    <strong>Fig 3</strong> | Semi-logarithmic DC I–V hysteresis characteristics demonstrating reproducible bipolar switching window.
   </div>
 </div>
 
@@ -91,17 +89,20 @@ Current-voltage (I–V) sweeps demonstrating bipolar resistive switching, thresh
 Variable-temperature electrical transport measurements to probe activation energies and electronic conduction modes across low to room temperatures.
 
 <div class="scientific-figure-slot">
-  <div class="figure-slot-body">
-    <div class="figure-slot-placeholder">
-      [REAL FIGURE REQUIRED: Variable-temperature DC I–V curves and Arrhenius conduction fitting plots]
-    </div>
-  </div>
+  <img src="{{ base_path }}/images/projects/pda/pda_temp_iv_overlay.png" alt="Temperature-Dependent I-V" style="width:100%; max-height:450px; object-fit:contain; display:block; background:#fff;">
   <div class="figure-slot-caption">
-    <strong>Fig 4</strong> | Temperature-dependent conduction analysis and Arrhenius activation fitting.
+    <strong>Fig 4</strong> | Variable-temperature DC I–V curves measured across temperature range.
   </div>
 </div>
 
-<!-- Future Visualization Slot (Task 5) -->
+<div class="scientific-figure-slot">
+  <img src="{{ base_path }}/images/projects/pda/pda_arrhenius_plot.png" alt="Arrhenius Activation Plot" style="width:100%; max-height:450px; object-fit:contain; display:block; background:#fff;">
+  <div class="figure-slot-caption">
+    <strong>Fig 5</strong> | Arrhenius activation energy extraction and conduction mode fitting.
+  </div>
+</div>
+
+<!-- Future Visualization Slot -->
 <div class="interactive-figure-slot">
   <div class="figure-slot-body">
     <div class="figure-slot-placeholder">
@@ -121,13 +122,9 @@ Variable-temperature electrical transport measurements to probe activation energ
 Transient fast-pulse testing demonstrating short-term plasticity (STP), paired-pulse facilitation (PPF), and pulse-frequency-dependent potentiation.
 
 <div class="scientific-figure-slot">
-  <div class="figure-slot-body">
-    <div class="figure-slot-placeholder">
-      [REAL FIGURE REQUIRED: Paired-Pulse Facilitation (PPF) decay curves and pulse train responses]
-    </div>
-  </div>
+  <img src="{{ base_path }}/images/projects/pda/pda_ppf_stp_decay.png" alt="PPF STP Decay Curve" style="width:100%; max-height:450px; object-fit:contain; display:block; background:#fff;">
   <div class="figure-slot-caption">
-    <strong>Fig 5</strong> | Biological synaptic emulation via pulse-interval-dependent facilitation.
+    <strong>Fig 6</strong> | Measured Paired-Pulse Facilitation (PPF) decay curve emulating biological short-term synaptic plasticity.
   </div>
 </div>
 
@@ -145,7 +142,7 @@ Measurement of switching cycle endurance and resistance state retention over ext
     </div>
   </div>
   <div class="figure-slot-caption">
-    <strong>Fig 6</strong> | Endurance cycling and non-volatile state retention stability.
+    <strong>Fig 7</strong> | Endurance cycling and non-volatile state retention stability.
   </div>
 </div>
 
@@ -157,13 +154,16 @@ Measurement of switching cycle endurance and resistance state retention over ext
 Spectroscopic characterization (XPS, Raman, UV–Vis) correlating catechol-quinone redox transitions with resistance states.
 
 <div class="scientific-figure-slot">
-  <div class="figure-slot-body">
-    <div class="figure-slot-placeholder">
-      [REAL FIGURE REQUIRED: High-resolution XPS N 1s/C 1s core-level spectra and Raman spectra before/after switching]
-    </div>
-  </div>
+  <img src="{{ base_path }}/images/projects/pda/pda_xps_n1s.png" alt="XPS N 1s Core Level Spectrum" style="width:100%; max-height:450px; object-fit:contain; display:block; background:#fff;">
   <div class="figure-slot-caption">
-    <strong>Fig 7</strong> | Spectroscopic confirmation of interfacial redox transitions in polydopamine junctions.
+    <strong>Fig 8</strong> | High-resolution XPS N 1s core-level deconvolution verifying protonation states.
+  </div>
+</div>
+
+<div class="scientific-figure-slot">
+  <img src="{{ base_path }}/images/projects/pda/pda_raman.png" alt="Raman Spectrum" style="width:100%; max-height:450px; object-fit:contain; display:block; background:#fff;">
+  <div class="figure-slot-caption">
+    <strong>Fig 9</strong> | Raman spectroscopic comparison confirming polymer structure.
   </div>
 </div>
 

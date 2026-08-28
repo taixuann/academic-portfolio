@@ -8,9 +8,11 @@ order: 2
 role: "Lead Instrumentation Engineer"
 status: "Operational Instrument"
 status_class: "status-operational"
-hero_figure_placeholder: "FreeCAD 3D cross-sectional assembly showing vacuum shroud, cold finger, and radiation shield"
+header:
+  teaser: "projects/cryostat/cryostat_overview_design.png"
+hero_image: "/images/projects/cryostat/cryostat_overview_design.png"
 hero_caption_title: "Figure 1"
-hero_caption: "Cross-sectional architecture of the modular cryogenic measurement stage."
+hero_caption: "3D CAD mechanical assembly showing vacuum shroud, cold finger, and modular sample stage."
 tags:
   - Cryostat Architecture
   - FreeCAD 3D CAD
@@ -38,17 +40,13 @@ Precision investigation of emergent quantum and memristive switching mechanisms 
 Parametric 3D CAD modeling of the cryostat body, thermal decoupling breaks, and gold-plated radiation shields to minimize radiative heat loads.
 
 <div class="scientific-figure-slot">
-  <div class="figure-slot-body">
-    <div class="figure-slot-placeholder">
-      [REAL FIGURE REQUIRED: Detailed mechanical CAD views of sample stage, flange interfaces, and vacuum seals]
-    </div>
-  </div>
+  <img src="{{ base_path }}/images/projects/cryostat/cryostat_system_photo.png" alt="Cryostat Prototype Photograph" style="width:100%; max-height:450px; object-fit:contain; display:block;">
   <div class="figure-slot-caption">
-    <strong>Fig 2</strong> | Mechanical assembly and vacuum component layout.
+    <strong>Fig 2</strong> | Assembled cryostat instrumentation overview and vacuum testbed.
   </div>
 </div>
 
-<!-- Future Visualization Slot (Task 5) -->
+<!-- Future Visualization Slot -->
 <div class="model-3d-slot">
   <div class="figure-slot-body">
     <div class="figure-slot-placeholder">
@@ -66,13 +64,9 @@ Parametric 3D CAD modeling of the cryostat body, thermal decoupling breaks, and 
 Steady-state and transient finite-difference thermal simulations in Python to evaluate temperature distribution across the cold stage and sample interface.
 
 <div class="scientific-figure-slot">
-  <div class="figure-slot-body">
-    <div class="figure-slot-placeholder">
-      [REAL FIGURE REQUIRED: 2D FDM temperature gradient contour map illustrating thermal isolation at 77 K]
-    </div>
-  </div>
+  <img src="{{ base_path }}/images/projects/cryostat/cryostat_thermal_sim.png" alt="Cryostat Thermal Simulation" style="width:100%; max-height:450px; object-fit:contain; display:block;">
   <div class="figure-slot-caption">
-    <strong>Fig 3</strong> | Steady-state 2D thermal finite-difference simulation confirming stage isolation.
+    <strong>Fig 3</strong> | Thermal modeling and gas cooling convection simulation for stage isolation.
   </div>
 </div>
 
@@ -82,13 +76,16 @@ Steady-state and transient finite-difference thermal simulations in Python to ev
 Design of custom sample mounting boards with matched trace impedances, low-temperature solder connections, and triaxial feedthrough integration for high-impedance measurements.
 
 <div class="scientific-figure-slot">
-  <div class="figure-slot-body">
-    <div class="figure-slot-placeholder">
-      [REAL FIGURE REQUIRED: Cryogenic PCB schematic, routing layout, and assembled testbed photograph]
-    </div>
-  </div>
+  <img src="{{ base_path }}/images/projects/cryostat/cryostat_pcb_front.png" alt="Custom Cryogenic PCB" style="width:100%; max-height:450px; object-fit:contain; display:block;">
   <div class="figure-slot-caption">
     <strong>Fig 4</strong> | Custom cryogenic breakout board layout and sample mounting topology.
+  </div>
+</div>
+
+<div class="scientific-figure-slot">
+  <img src="{{ base_path }}/images/projects/cryostat/cryostat_sample_assembly.png" alt="Sample Stage Assembly" style="width:100%; max-height:450px; object-fit:contain; display:block;">
+  <div class="figure-slot-caption">
+    <strong>Fig 5</strong> | Sample mounting assembly and electrical interface wiring.
   </div>
 </div>
 
