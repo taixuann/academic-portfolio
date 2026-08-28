@@ -1,322 +1,220 @@
 /* ==========================================================================
-   SHARED THEME SETTINGS
+   DEARDEER SCIENTIFIC PRESENTATION ENGINE
+   Faithful visual adaptation from deardeer.github.io & Minimal Academic Site
    ========================================================================== */
 
-/* ==========================================================================
-   TYPOGRAPHY
-   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Roboto+Condensed:wght@400;700&display=swap");
 
-/* Used to set the size for <em> */
-$doc-font-size              : 16;
+:root {
+  --deardeer-font: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --deardeer-accent: #2e7d32;
+  --deardeer-tag-submitted: #e65100;
+  --deardeer-tag-operational: #2e7d32;
+  --deardeer-tag-model: #0284c7;
+}
 
-/* Paragraph indention */
-$paragraph-indent           : false; // true, false (default)
-$indent-var                 : 1.3em;
+body {
+  font-family: var(--deardeer-font) !important;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1e293b;
+}
 
-/* System typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace                  : Monaco, Consolas, "Lucida Console", monospace;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--deardeer-font) !important;
+  font-weight: 700;
+  color: #0f172a;
+}
 
-/* Sans serif typefaces */
-$sans-serif-narrow          : $sans-serif;
-$helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
+/* Deardeer Projects & Publications Structure (.oneproject) */
+.deardeer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin: 1.5rem 0 3rem;
+}
 
-/* Serif typefaces */
-$georgia                    : Georgia, serif;
-$times                      : Times, serif;
-$bodoni                     : "Bodoni MT", serif;
-$calisto                    : "Calisto MT", serif;
-$garamond                   : Garamond, serif;
-
-/* Type scale */
-$type-size-1                : 2.441em;  // ~39.056px
-$type-size-2                : 1.953em;  // ~31.248px
-$type-size-3                : 1.563em;  // ~25.008px
-$type-size-4                : 1.25em;   // ~20px
-$type-size-5                : 1em;      // ~16px
-$type-size-6                : 0.75em;   // ~12px
-$type-size-7                : 0.6875em; // ~11px
-$type-size-8                : 0.625em;  // ~10px
-
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
-
-/* ==========================================================================
-   Breakpoints
-   ========================================================================== */
-
-@include breakpoint-set("to ems", true);
-
-$small                      : 600px !default;
-$medium                     : 768px !default;
-$medium-wide                : 900px !default;
-$large                      : 925px !default;
-$x-large                    : 1280px !default;
-
-/* ==========================================================================
-   Grid
-   ========================================================================== */
-
-$right-sidebar-width-narrow : auto;
-$right-sidebar-width        : auto;
-$right-sidebar-width-wide   : auto;
-
-$susy: (
-    columns: 12,
-    column-width: 120px,
-    gutters: 1/4,
-    math: fluid,
-    output: float,
-    gutter-position: after,
-    container: $large,
-    global-box-sizing: border-box,
-);
-
-/* ==========================================================================
-   BRAND COLORS
-   ========================================================================== */
-
-$behance-color              : #1769FF;
-$bluesky-color              : #1184fe;
-$dribbble-color             : #ea4c89;
-$facebook-color             : #3b5998;
-$flickr-color               : #ff0084;
-$foursquare-color           : #0072b1;
-$google-plus-color          : #dd4b39;
-$instagram-color            : #517fa4;
-$kaggle-color               : #20c0ff;
-$lastfm-color               : #d51007;
-$linkedin-color             : #007bb6;
-$mastodon-color             : #6364ff;
-$orcid-color                : #a6ce39;
-$pinterest-color            : #cb2027;
-$rss-color                  : #fa9b39;
-$soundcloud-color           : #ff3300;
-$stackoverflow-color        : #fe7a15;
-$tumblr-color               : #32506d;
-$twitter-color              : #55acee;
-$vimeo-color                : #1ab7ea;
-$vine-color                 : #00bf8f;
-$youtube-color              : #bb0000;
-$xing-color                 : #006567;
-   
-
-/* ==========================================================================
-   ACADEMIC PORTFOLIO REFINED STYLING (Issue #2 Refresh)
-   Anchor: Minimal Academic Site + deardeer research-native presentation
-   ========================================================================== */
-
-/* Modernized Typography & Base Hierarchy */
-$sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$global-font-family: $sans-serif;
-$header-font-family: $sans-serif;
-
-/* Research Item Row (deardeer / Minimal Academic Site hybrid) */
-.research-entry {
+.oneproject {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--global-border-color, #e2e8f0);
-  align-items: flex-start;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 1rem;
+    padding: 1rem;
   }
 }
 
-.research-thumb {
-  flex: 0 0 200px;
-  width: 200px;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid var(--global-border-color, #e2e8f0);
-  background-color: var(--global-bg-color-light, rgba(0,0,0,0.03));
+.oneproject .project_img {
+  flex: 0 0 220px;
+  width: 220px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  min-height: 125px;
+  align-items: center;
 
   img {
     width: 100%;
     height: auto;
-    max-height: 130px;
+    max-height: 140px;
     object-fit: contain;
-    display: block;
+    border: 0.5px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #f8fafc;
   }
 
   @media (max-width: 768px) {
     flex: none;
     width: 100%;
-    min-height: 140px;
   }
 }
 
-.placeholder-frame {
-  width: 100%;
-  min-height: 125px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 1px dashed var(--global-border-color, #94a3b8);
-  border-radius: 6px;
-  background: var(--global-bg-color-light, rgba(0,0,0,0.02));
-  color: var(--global-text-color-light, #64748b);
-  font-family: Monaco, Consolas, monospace;
-  font-size: 0.75rem;
-  line-height: 1.4;
-}
-
-.research-content {
+.oneproject .project_info {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.35rem;
 }
 
-.research-title {
-  font-size: 1.15rem;
+.oneproject .project_title {
+  font-size: 1.2rem;
   font-weight: 700;
-  line-height: 1.35;
-  margin: 0 0 0.2rem 0;
+  line-height: 1.3;
+  margin: 0 0 0.15rem 0;
 
   a {
-    color: var(--global-text-color, inherit);
+    color: #0f172a;
     text-decoration: none;
 
     &:hover {
-      color: var(--global-theme-color, #0284c7);
+      color: #0284c7;
       text-decoration: underline;
     }
   }
 }
 
-.research-authors {
-  font-size: 0.92rem;
-  color: var(--global-text-color, #334155);
+.oneproject .project_author {
+  font-size: 0.95rem;
+  color: #334155;
+  font-weight: 500;
   margin: 0;
 
   strong {
-    color: var(--global-text-color, #0f172a);
-    font-weight: 600;
+    color: #0f172a;
+    font-weight: 700;
   }
 }
 
-.research-venue {
-  font-size: 0.88rem;
-  color: var(--global-text-color-light, #64748b);
+.oneproject .paper_venue {
+  font-size: 0.9rem;
+  color: #64748b;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin: 0.1rem 0;
-
-  em {
-    font-style: italic;
-  }
 }
 
-.status-badge {
-  display: inline-block;
-  font-family: Monaco, Consolas, monospace;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  background-color: rgba(245, 158, 11, 0.12);
-  color: #d97706;
-  border: 1px solid rgba(245, 158, 11, 0.3);
-
-  &.status-operational {
-    background-color: rgba(16, 185, 129, 0.12);
-    color: #059669;
-    border-color: rgba(16, 185, 129, 0.3);
-  }
-
-  &.status-framework {
-    background-color: rgba(56, 189, 248, 0.12);
-    color: #0284c7;
-    border-color: rgba(56, 189, 248, 0.3);
-  }
-}
-
-.research-desc {
-  font-size: 0.9rem;
-  color: var(--global-text-color-light, #475569);
-  line-height: 1.5;
+.oneproject .paper_intro {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.55;
   margin: 0.25rem 0;
 }
 
-.research-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0.3rem 0;
-}
-
-.tag-chip {
+/* Deardeer Category Tag Pills */
+.pub_tag {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 0.15rem 0.6rem;
   font-family: Monaco, Consolas, monospace;
   font-size: 0.72rem;
-  padding: 0.15rem 0.45rem;
-  background-color: var(--global-bg-color-light, #f1f5f9);
-  color: var(--global-text-color, #475569);
-  border: 1px solid var(--global-border-color, #e2e8f0);
-  border-radius: 4px;
-}
-
-.research-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.4rem;
-}
-
-.action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.25rem 0.65rem;
-  font-size: 0.8rem;
   font-weight: 600;
-  text-decoration: none;
-  border-radius: 4px;
-  border: 1px solid var(--global-border-color, #cbd5e1);
-  background-color: var(--global-bg-color, #ffffff);
-  color: var(--global-text-color, #334155);
-  transition: all 0.15s ease;
+  color: #ffffff;
+  background-color: #f59e0b;
+  letter-spacing: 0.02em;
 
-  &:hover {
-    border-color: var(--global-theme-color, #0284c7);
-    color: var(--global-theme-color, #0284c7);
-    text-decoration: none;
+  &.tag-jacs, &.tag-submitted {
+    background-color: #d97706;
   }
 
-  &.action-primary {
-    background-color: var(--global-theme-color, #0284c7);
-    color: #ffffff;
-    border-color: var(--global-theme-color, #0284c7);
+  &.tag-operational {
+    background-color: #059669;
+  }
+
+  &.tag-fdm, &.tag-modeling {
+    background-color: #0284c7;
+  }
+
+  &.tag-pda {
+    background-color: #7c3aed;
+  }
+}
+
+/* Deardeer Compact Bracket Action Links */
+.oneproject .paper_resource {
+  font-size: 0.88rem;
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
 
     &:hover {
-      filter: brightness(1.1);
-      color: #ffffff;
+      text-decoration: underline;
+      color: #0369a1;
     }
   }
 }
 
-/* ==========================================================================
-   Project Detail Layout Components (Task 4 & 5)
-   ========================================================================== */
+.action-bracket-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: #0284c7;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+
+  &::before {
+    content: "[";
+    color: #94a3b8;
+    margin-right: 2px;
+  }
+
+  &::after {
+    content: "]";
+    color: #94a3b8;
+    margin-left: 2px;
+  }
+
+  &:hover {
+    color: #0369a1;
+    text-decoration: underline;
+  }
+}
+
+/* Deardeer Project Detail Layout Elements */
 .project-summary-box {
-  background-color: var(--global-bg-color-light, #f8fafc);
-  border: 1px solid var(--global-border-color, #e2e8f0);
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0 2rem;
@@ -336,64 +234,72 @@ $header-font-family: $sans-serif;
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--global-text-color-light, #64748b);
+  color: #64748b;
   font-weight: 600;
 }
 
 .summary-col-val {
-  font-size: 0.92rem;
-  color: var(--global-text-color, #1e293b);
-  font-weight: 500;
+  font-size: 0.95rem;
+  color: #0f172a;
+  font-weight: 600;
 }
 
-/* Section Navigation Pills */
 .section-nav-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
   padding: 0.75rem 0;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--global-border-color, #e2e8f0);
+  border-bottom: 1px solid #e2e8f0;
 
   a {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-    background-color: var(--global-bg-color-light, #f1f5f9);
-    color: var(--global-text-color, #475569);
+    padding: 0.25rem 0.65rem;
+    border-radius: 12px;
+    background-color: #f1f5f9;
+    color: #334155;
     text-decoration: none;
-    border: 1px solid var(--global-border-color, #e2e8f0);
+    border: 1px solid #e2e8f0;
 
     &:hover {
-      background-color: var(--global-theme-color, #0284c7);
+      background-color: #0284c7;
       color: #ffffff;
-      border-color: var(--global-theme-color, #0284c7);
+      border-color: #0284c7;
     }
   }
 }
 
-/* Future Visualization Slots (Task 5) */
 .scientific-figure-slot,
 .interactive-figure-slot,
 .data-explorer-slot,
 .model-3d-slot {
-  margin: 1.5rem 0;
-  border: 1px solid var(--global-border-color, #e2e8f0);
+  margin: 1.75rem 0;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   overflow: hidden;
-  background-color: var(--global-bg-color-light, #0f1523);
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+  img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    display: block;
+    padding: 0.5rem;
+    background-color: #ffffff;
+  }
 }
 
 .figure-slot-caption {
-  padding: 0.65rem 1rem;
-  font-size: 0.85rem;
-  color: var(--global-text-color-light, #64748b);
-  border-top: 1px solid var(--global-border-color, #e2e8f0);
-  background-color: var(--global-bg-color, #ffffff);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.88rem;
+  color: #475569;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
 
   strong {
-    color: var(--global-text-color, #0f172a);
+    color: #0f172a;
   }
 }
 
@@ -404,17 +310,18 @@ $header-font-family: $sans-serif;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 200px;
+  min-height: 180px;
+  background-color: #f8fafc;
 }
 
 .figure-slot-placeholder {
   font-family: Monaco, Consolas, monospace;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #64748b;
   max-width: 500px;
   line-height: 1.5;
-  border: 1px dashed #475569;
+  border: 1px dashed #cbd5e1;
   padding: 1.25rem 1.5rem;
   border-radius: 6px;
-  background: rgba(15, 23, 42, 0.6);
+  background: #ffffff;
 }
