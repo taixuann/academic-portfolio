@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,56 +9,25 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+<p><a href="{{ base_path }}/files/academic-cv.pdf" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa fa-download" aria-hidden="true"></i> Download Full CV (PDF)</a></p>
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Education
+* **B.S. in Materials Science & Nano-Engineering**, 2024
+  * University of Science and Technology of Hanoi (USTH)
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## Research Experience
+* **Researcher / Research Assistant** (2024 – Present)
+  * Focus: Polydopamine memristive junctions, cryogenic transport instrumentation, and nanophotonic modeling.
+  * Lead author on first-author manuscript submitted to *Journal of the American Chemical Society* (JACS).
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+## Core Technical Competencies
+* **Device Fabrication & Chemistry**: Thin-film electropolymerization, crossbar device microfabrication, surface functionalization.
+* **Electrical Characterization**: DC I–V hysteresis, variable-temperature electronic transport, fast-pulse characterization, STP/PPF synaptic plasticity, endurance/retention testing.
+* **Materials Characterization**: XPS (core-level peak deconvolution), Raman spectroscopy, UV–Vis spectrophotometry, AFM.
+* **Instrumentation & Engineering**: FreeCAD 3D parametric mechanical design, cryogenic system architecture (77 K–350 K), custom PCB design, LabVIEW automation.
+* **Computational Modeling**: Lumerical FDTD (3D electrodynamics), Lumerical HEAT (photothermal finite element analysis), Python thermal finite-difference modeling (FDM).
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Publications & Preprints
+<ul>{% for post in site.publications reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
