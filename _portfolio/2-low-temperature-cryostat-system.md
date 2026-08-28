@@ -1,8 +1,23 @@
 ---
+layout: project-detail
 title: "Low-Temperature Cryostat System"
-excerpt: "Developing a modular, low-noise cryogenic characterization platform for precision electronic transport measurements across 77 K–350 K."
+purpose: "Developing an open-architecture, low-vibration cryogenic characterization platform for precision electronic transport measurements across 77 K–350 K."
+excerpt: "Engineered a modular low-temperature electrical measurement platform with custom PCB breakout and thermal decoupling."
 collection: portfolio
 order: 2
+role: "Lead Instrumentation Engineer"
+status: "Operational Instrument"
+status_class: "status-operational"
+hero_figure_placeholder: "FreeCAD 3D cross-sectional assembly showing vacuum shroud, cold finger, and radiation shield"
+hero_caption_title: "Figure 1"
+hero_caption: "Cross-sectional architecture of the modular cryogenic measurement stage."
+tags:
+  - Cryostat Architecture
+  - FreeCAD 3D CAD
+  - Thermal FDM Modeling
+  - Custom PCB Design
+  - Low-Noise Instrumentation
+  - Vacuum Integration
 ---
 
 ## Research Question & Purpose
@@ -17,26 +32,67 @@ Precision investigation of emergent quantum and memristive switching mechanisms 
 * Designed custom multi-channel cryogenic sample breakout PCBs with integrated Pt100 RTD temperature sensors and low-noise triaxial signal lines.
 * Executed system assembly, vacuum feedthrough integration, chamber pumping, and thermal stage calibration.
 
-## Methods & Techniques
-* **Mechanical CAD**: FreeCAD parametric 3D modeling of vacuum flanges, radiation shields, and sample stage assemblies.
-* **Thermal Modeling**: 2D steady-state and transient Finite-Difference Method (FDM) heat transfer simulation in Python.
-* **PCB Design**: Custom cryogenic sample mounting boards, impedance-controlled trace routing, and low-thermal-load wiring.
-* **Cryogenics & Materials**: Oxygen-Free High Thermal Conductivity (OFHC) copper, high-vacuum seals, gold plating, PEEK insulators.
-* **Instrumentation**: Automated PID temperature controller integration, low-noise DC/AC transport measurement setup.
+---
 
-## Selected Figures
+## 1. Mechanical & Vacuum Architecture
+Parametric 3D CAD modeling of the cryostat body, thermal decoupling breaks, and gold-plated radiation shields to minimize radiative heat loads.
 
-### Figure 1: Mechanical System Architecture
-`[REAL FIGURE REQUIRED: FreeCAD 3D cross-sectional CAD assembly showing vacuum chamber, cold finger, and radiation shield]`
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: Detailed mechanical CAD views of sample stage, flange interfaces, and vacuum seals]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 2</strong> | Mechanical assembly and vacuum component layout.
+  </div>
+</div>
 
-### Figure 2: Finite-Difference Thermal Model
-`[REAL FIGURE REQUIRED: 2D FDM temperature gradient contour map illustrating thermal isolation at the 77 K sample node]`
+<!-- Future Visualization Slot (Task 5) -->
+<div class="model-3d-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [FUTURE VISUALIZATION SLOT: Interactive 3D CAD Exploded View of Cryostat Stage]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>3D Interactive Model</strong> | Exploded mechanical CAD viewer (to be enabled when GLB/STL model is connected).
+  </div>
+</div>
 
-### Figure 3: Cryogenic Interface PCB & Wiring
-`[REAL FIGURE REQUIRED: Schematic and layout of custom low-temperature sample interface PCB with RTD sensors]`
+---
 
-### Figure 4: System Integration & Prototype
-`[REAL FIGURE REQUIRED: Photograph of assembled cryostat instrument and vacuum testbed]`
+## 2. Thermal Modeling & Finite-Difference Simulation
+Steady-state and transient finite-difference thermal simulations in Python to evaluate temperature distribution across the cold stage and sample interface.
+
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: 2D FDM temperature gradient contour map illustrating thermal isolation at 77 K]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 3</strong> | Steady-state 2D thermal finite-difference simulation confirming stage isolation.
+  </div>
+</div>
+
+---
+
+## 3. Cryogenic PCB & Electronic Interfacing
+Design of custom sample mounting boards with matched trace impedances, low-temperature solder connections, and triaxial feedthrough integration for high-impedance measurements.
+
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: Cryogenic PCB schematic, routing layout, and assembled testbed photograph]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 4</strong> | Custom cryogenic breakout board layout and sample mounting topology.
+  </div>
+</div>
+
+---
 
 ## Outcome & Status
 * **Status**: Operational experimental instrumentation platform and modular device testing testbed.

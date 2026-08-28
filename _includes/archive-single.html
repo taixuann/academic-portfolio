@@ -12,73 +12,132 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
-      </div>
-    {% endif %}
-
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+{% if post.collection == 'publications' %}
+  <!-- Research Publication Row (Minimal Academic Site + deardeer style) -->
+  <div class="research-entry">
+    <div class="research-thumb">
+      {% if teaser and teaser != "" %}
+        <img src="{% if teaser contains "://" %}{{ teaser }}{% else %}{{ teaser | prepend: "/images/" | prepend: base_path }}{% endif %}" alt="{{ title }}">
       {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        <div class="placeholder-frame">
+          <span>[FIGURE SLOT]</span>
+        </div>
       {% endif %}
-    </h2>
-    
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
+    </div>
 
-        {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+    <div class="research-content">
+      <h3 class="research-title">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}">{{ title }}</a>
+        {% elsif post.link %}
+          <a href="{{ post.link }}">{{ title }}</a>
+        {% else %}
+          <a href="{{ base_path }}{{ post.url }}">{{ title }}</a>
         {% endif %}
+      </h3>
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
-    {% endif %}
-    
-    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.paperurl %}
-      <p><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% endif %}
+      {% if post.authors %}
+        <p class="research-authors">{{ post.authors }}</p>
+      {% endif %}
 
-  </article>
-</div>
+      <p class="research-venue">
+        <span><em>{{ post.venue }}</em></span>
+        {% if post.date %}
+          <span>· {{ post.date | date: "%Y" }}</span>
+        {% endif %}
+        {% if post.status %}
+          <span class="status-badge">{{ post.status }}</span>
+        {% elsif post.category == 'manuscripts' %}
+          <span class="status-badge">Submitted</span>
+        {% endif %}
+      </p>
+
+      {% if post.excerpt %}
+        <p class="research-desc">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      {% endif %}
+
+      <div class="research-actions">
+        <a href="{{ base_path }}{{ post.url }}" class="action-btn">Overview</a>
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" class="action-btn" target="_blank" rel="noopener noreferrer">Paper</a>
+        {% endif %}
+        {% if post.manuscripturl %}
+          <a href="{{ post.manuscripturl }}" class="action-btn" target="_blank" rel="noopener noreferrer">Manuscript</a>
+        {% endif %}
+        {% if post.doi %}
+          <a href="https://doi.org/{{ post.doi }}" class="action-btn" target="_blank" rel="noopener noreferrer">DOI</a>
+        {% endif %}
+        {% if post.codeurl %}
+          <a href="{{ post.codeurl }}" class="action-btn" target="_blank" rel="noopener noreferrer">Code</a>
+        {% endif %}
+        {% if post.dataurl %}
+          <a href="{{ post.dataurl }}" class="action-btn" target="_blank" rel="noopener noreferrer">Data</a>
+        {% endif %}
+        {% if post.bibtexurl %}
+          <a href="{{ post.bibtexurl }}" class="action-btn" target="_blank" rel="noopener noreferrer">BibTeX</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+{% elsif post.collection == 'portfolio' %}
+  <!-- Research Project Row (deardeer inspired) -->
+  <div class="research-entry">
+    <div class="research-thumb">
+      {% if teaser and teaser != "" %}
+        <img src="{% if teaser contains "://" %}{{ teaser }}{% else %}{{ teaser | prepend: "/images/" | prepend: base_path }}{% endif %}" alt="{{ title }}">
+      {% else %}
+        <div class="placeholder-frame">
+          <span>[REAL FIGURE REQUIRED]</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="research-content">
+      <h3 class="research-title">
+        <a href="{{ base_path }}{{ post.url }}">{{ title }}</a>
+      </h3>
+
+      {% if post.status %}
+        <div class="research-venue">
+          <span class="status-badge {% if post.status_class %}{{ post.status_class }}{% endif %}">{{ post.status }}</span>
+        </div>
+      {% endif %}
+
+      {% if post.excerpt %}
+        <p class="research-desc">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      {% endif %}
+
+      {% if post.tags %}
+        <div class="research-tags">
+          {% for tag in post.tags %}
+            <span class="tag-chip">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="research-actions">
+        <a href="{{ base_path }}{{ post.url }}" class="action-btn action-primary">View Project &rarr;</a>
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" class="action-btn" target="_blank" rel="noopener noreferrer">Manuscript</a>
+        {% endif %}
+        {% if post.cadurl %}
+          <a href="{{ post.cadurl }}" class="action-btn" target="_blank" rel="noopener noreferrer">CAD Model</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+{% else %}
+  <!-- Default list item fallback -->
+  <div class="list__item">
+    <article class="archive__item">
+      <h2 class="archive__item-title">
+        <a href="{{ base_path }}{{ post.url }}">{{ title }}</a>
+      </h2>
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt">{{ post.excerpt | markdownify }}</p>
+      {% endif %}
+    </article>
+  </div>
+{% endif %}

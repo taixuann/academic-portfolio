@@ -1,0 +1,87 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% if page.excerpt %}
+      <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+
+    <div class="page__inner-wrap">
+      <header>
+        <h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+        {% if page.purpose %}
+          <p class="page__lead" style="font-size: 1.15rem; color: var(--global-theme-color, #0284c7); margin: 0.5rem 0 1rem; font-weight: 500;">
+            {{ page.purpose }}
+          </p>
+        {% endif %}
+      </header>
+
+      <!-- Hero Figure / Neutral Placeholder Slot -->
+      <div class="scientific-figure-slot">
+        {% if page.hero_image %}
+          <img src="{{ page.hero_image | prepend: base_path }}" alt="{{ page.title }}" style="width:100%; max-height:450px; object-fit:contain; display:block;">
+        {% else %}
+          <div class="figure-slot-body">
+            <div class="figure-slot-placeholder">
+              [REAL FIGURE REQUIRED: {{ page.hero_figure_placeholder | default: "Primary experimental figure / device architecture" }}]
+            </div>
+          </div>
+        {% endif %}
+        {% if page.hero_caption %}
+          <div class="figure-slot-caption">
+            <strong>{{ page.hero_caption_title | default: "Fig 1" }}</strong> | {{ page.hero_caption }}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Compact Summary Metadata Box -->
+      <div class="project-summary-box">
+        <div class="summary-col">
+          <span class="summary-col-label">Role</span>
+          <span class="summary-col-val">{{ page.role | default: "Lead Researcher" }}</span>
+        </div>
+        <div class="summary-col">
+          <span class="summary-col-label">Status</span>
+          <span class="summary-col-val">
+            <span class="status-badge {% if page.status_class %}{{ page.status_class }}{% endif %}">{{ page.status | default: "Active" }}</span>
+          </span>
+        </div>
+        <div class="summary-col" style="grid-column: 1 / -1;">
+          <span class="summary-col-label">Methods</span>
+          <div class="research-tags" style="margin-top: 0.2rem;">
+            {% for tag in page.tags %}
+              <span class="tag-chip">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Navigation Pills (if anchors defined) -->
+      {% if page.section_anchors %}
+        <nav class="section-nav-pills" aria-label="Project section navigation">
+          {% for anchor in page.section_anchors %}
+            <a href="#{{ anchor.id }}">{{ anchor.title }}</a>
+          {% endfor %}
+        </nav>
+      {% endif %}
+
+      <!-- Main Project Body Content -->
+      <section class="page__content" itemprop="text">
+        {{ content }}
+      </section>
+
+      <footer class="page__meta">
+        {% if page.publication_link %}
+          <p><strong>Associated Publication:</strong> <a href="{{ page.publication_link }}">{{ page.publication_title }}</a></p>
+        {% endif %}
+      </footer>
+    </div>
+  </article>
+</div>

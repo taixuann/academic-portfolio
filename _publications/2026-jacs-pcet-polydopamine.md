@@ -3,9 +3,11 @@ title: "Electric Field-Driven Interfacial Proton-Coupled Electron Transfer in Pr
 collection: publications
 category: manuscripts
 permalink: /publication/2026-jacs-pcet-polydopamine
-excerpt: "Investigating electric field-driven interfacial proton-coupled electron transfer in polydopamine crossbar devices to achieve reproducible analog resistive switching and synaptic plasticity."
+excerpt: "Demonstrating electric field-driven interfacial proton-coupled electron transfer in biopolymer crossbar junctions to achieve tunable analog switching and synaptic plasticity."
 date: 2026-08-01
-venue: 'Submitted to Journal of the American Chemical Society'
+authors: "Nguyen, X. T., et al."
+venue: "Submitted to Journal of the American Chemical Society"
+status: "Submitted"
 citation: 'Nguyen, X. T., et al. (2026). &quot;Electric Field-Driven Interfacial Proton-Coupled Electron Transfer in Protonated Polydopamine Junctions.&quot; <i>Submitted to Journal of the American Chemical Society</i>.'
 ---
 

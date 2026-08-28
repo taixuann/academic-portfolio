@@ -1,8 +1,37 @@
 ---
+layout: project-detail
 title: "Polydopamine-based Crossbar Devices"
-excerpt: "Investigating interfacial proton-coupled electron transfer (PCET) to enable tunable analog synaptic plasticity in nanoscale biopolymer memristive crossbar junctions."
+purpose: "Elucidating interfacial proton-coupled electron transfer (PCET) to enable tunable analog synaptic plasticity in nanoscale biopolymer memristive crossbar junctions."
+excerpt: "Investigating interfacial proton-coupled electron transfer in polydopamine crossbars for analog resistive switching and biological synaptic emulation."
 collection: portfolio
 order: 1
+role: "First Author / Experimental Lead"
+status: "Submitted to JACS (2026)"
+status_class: "status-submitted"
+hero_figure_placeholder: "Schematic crossbar stack (Au/PDA/Pt) and interfacial PCET proton transport diagram"
+hero_caption_title: "Figure 1"
+hero_caption: "Device geometry and proposed field-driven proton-coupled electron transfer interface."
+tags:
+  - Thin-Film Electropolymerization
+  - Crossbar Devices
+  - DC I–V Hysteresis
+  - Variable-Temperature Transport
+  - Fast-Pulse Plasticity
+  - XPS & Raman
+  - LabVIEW Automation
+section_anchors:
+  - id: "fabrication"
+    title: "1. Fabrication"
+  - id: "dc-switching"
+    title: "2. DC Switching"
+  - id: "temperature-dependence"
+    title: "3. Temperature Dependence"
+  - id: "pulse-plasticity"
+    title: "4. Pulse Plasticity"
+  - id: "reliability"
+    title: "5. Reliability"
+  - id: "structure-composition"
+    title: "6. Structure & Composition"
 ---
 
 ## Research Question & Purpose
@@ -18,30 +47,128 @@ Polydopamine is a biomimetic polymer exhibiting coupled electronic and ionic con
 * Performed material spectroscopy and surface morphology analysis (AFM, Raman, UV–Vis, and XPS) to correlate quinone/catechol redox transitions with memristive switching states.
 * Developed automated measurement routines using LabVIEW for continuous pulse-train and DC sweep acquisition.
 
-## Methods & Techniques
-* **Fabrication**: PDA thin-film electropolymerization, crossbar device geometry (Pt bottom electrode, Au top electrode).
-* **Electrical Transport**: DC I–V hysteresis loops, temperature-dependent transport (variable temperature probe station), fast-pulse switching, endurance ($>10^3$ cycles), retention ($>10^4$ s).
-* **Synaptic Emulation**: Paired-Pulse Facilitation (PPF), Short-Term Plasticity (STP), post-tetanic potentiation.
-* **Spectroscopy & Microscopy**: X-ray Photoelectron Spectroscopy (XPS N 1s, C 1s, O 1s deconvolution), Raman spectroscopy, UV–Vis spectrophotometry, Atomic Force Microscopy (AFM).
-* **Automation**: LabVIEW automated instrument control for Keithley source meters and arbitrary function generators.
+---
 
-## Selected Figures
+<div id="fabrication"></div>
 
-### Figure 1: Device Architecture & PCET Mechanism
-`[REAL FIGURE REQUIRED: Schematic of Au/PDA/Pt crossbar stack and interfacial proton-coupled electron transfer diagram]`
+## 1. Fabrication & Device Architecture
+Controlled electrodeposition of thin polydopamine active layers on patterned bottom electrodes, followed by top electrode deposition to form crossbar junction arrays.
 
-### Figure 2: DC I–V Resistive Switching Hysteresis
-`[REAL FIGURE REQUIRED: Semi-logarithmic bipolar DC I–V hysteresis loops showing Set/Reset voltages and ON/OFF window]`
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: Crossbar fabrication flow, cross-sectional SEM/AFM, and thickness calibration]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 2</strong> | Device fabrication workflow and thin-film thickness verification.
+  </div>
+</div>
 
-### Figure 3: Temperature-Dependent Electronic Transport
-`[REAL FIGURE REQUIRED: Temperature-dependent DC I–V curves and Arrhenius conduction fitting plots]`
+---
 
-### Figure 4: Fast-Pulse Synaptic Plasticity & Retention
-`[REAL FIGURE REQUIRED: Paired-Pulse Facilitation (PPF) decay curves and retention stability measurements]`
+<div id="dc-switching"></div>
 
-### Figure 5: Material & Chemical State Verification
-`[REAL FIGURE REQUIRED: High-resolution XPS N 1s/C 1s core-level spectra and Raman spectra before and after electrical switching]`
+## 2. DC Switching & Resistive States
+Current-voltage (I–V) sweeps demonstrating bipolar resistive switching, threshold switching behavior, and analog state modulation.
+
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: Semi-logarithmic DC I–V hysteresis loops showing Set/Reset voltages and ON/OFF window]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 3</strong> | DC I–V hysteresis characteristics demonstrating reproducible bipolar switching.
+  </div>
+</div>
+
+---
+
+<div id="temperature-dependence"></div>
+
+## 3. Temperature Dependence & Transport Mechanisms
+Variable-temperature electrical transport measurements to probe activation energies and electronic conduction modes across low to room temperatures.
+
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: Variable-temperature DC I–V curves and Arrhenius conduction fitting plots]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 4</strong> | Temperature-dependent conduction analysis and Arrhenius activation fitting.
+  </div>
+</div>
+
+<!-- Future Visualization Slot (Task 5) -->
+<div class="interactive-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [FUTURE VISUALIZATION SLOT: Interactive Temperature-Dependent I–V Data Explorer]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Interactive Explorer</strong> | Dynamic temperature sweep parameter explorer (to be enabled when raw data is connected).
+  </div>
+</div>
+
+---
+
+<div id="pulse-plasticity"></div>
+
+## 4. Pulse Plasticity & Synaptic Emulation
+Transient fast-pulse testing demonstrating short-term plasticity (STP), paired-pulse facilitation (PPF), and pulse-frequency-dependent potentiation.
+
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: Paired-Pulse Facilitation (PPF) decay curves and pulse train responses]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 5</strong> | Biological synaptic emulation via pulse-interval-dependent facilitation.
+  </div>
+</div>
+
+---
+
+<div id="reliability"></div>
+
+## 5. Reliability & Retention
+Measurement of switching cycle endurance and resistance state retention over extended temporal intervals.
+
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: Endurance cycling (>10³ cycles) and temporal retention stability (>10⁴ s)]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 6</strong> | Endurance cycling and non-volatile state retention stability.
+  </div>
+</div>
+
+---
+
+<div id="structure-composition"></div>
+
+## 6. Structure & Chemical Composition
+Spectroscopic characterization (XPS, Raman, UV–Vis) correlating catechol-quinone redox transitions with resistance states.
+
+<div class="scientific-figure-slot">
+  <div class="figure-slot-body">
+    <div class="figure-slot-placeholder">
+      [REAL FIGURE REQUIRED: High-resolution XPS N 1s/C 1s core-level spectra and Raman spectra before/after switching]
+    </div>
+  </div>
+  <div class="figure-slot-caption">
+    <strong>Fig 7</strong> | Spectroscopic confirmation of interfacial redox transitions in polydopamine junctions.
+  </div>
+</div>
+
+---
 
 ## Outcome & Status
 * **Status**: First-author manuscript submitted to *Journal of the American Chemical Society* (2026).
-* **Manuscript**: "Electric Field-Driven Interfacial Proton-Coupled Electron Transfer in Protonated Polydopamine Junctions."
+* **Citation**: Nguyen, X. T., et al. "Electric Field-Driven Interfacial Proton-Coupled Electron Transfer in Protonated Polydopamine Junctions." *Submitted to Journal of the American Chemical Society*, 2026.
