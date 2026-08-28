@@ -1,12 +1,12 @@
-# Site Configuration for Thai-Xuan Nguyen Academic Portfolio
+# Site Configuration for Xuan-Tai Nguyen Academic Portfolio
 # Adapted from Academic Pages (upstream: https://github.com/academicpages/academicpages.github.io)
 # Upstream pinned commit: a4386d88512a52499f4cebff515a1bb9b310da9a
 
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Thai-Xuan Nguyen"
+title                    : "Xuan-Tai Nguyen"
 title_separator          : "·"
-name                     : &name "Nguyen Thai Xuan"
+name                     : &name "Nguyen Xuan Tai"
 description              : &description "Academic Research Portfolio: Emerging electronic materials, device physics, and scientific instrumentation."
 url                      : "https://taixuann.github.io"
 baseurl                  : "/academic-portfolio"
@@ -15,13 +15,14 @@ repository               : "taixuann/academic-portfolio"
 # Site Author Profile
 author:
   avatar           : "profile.png"
-  name             : "Nguyen Thai Xuan"
+  name             : "Nguyen Xuan Tai"
   pronouns         : # "he/him"
   bio              : "Emerging electronic materials, device physics, and scientific instrumentation."
   location         : "Hanoi, Vietnam"
   employer         : ""
   uri              : ""
   email            : "tainguyen.materials@gmail.com"
+
 
   # Academic profiles
   googlescholar    : ""
