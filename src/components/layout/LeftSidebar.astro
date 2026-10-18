@@ -2,23 +2,23 @@
 import { SITE, SOCIALS, SOCIAL_ICONS } from "../../config";
 import { getCollection } from "astro:content";
 import Icon from "../ui/Icon.astro";
-import { Image } from 'astro:assets';
 
 const activeSocials = SOCIALS.filter((s) => s.isActive);
 const bioCollection = await getCollection("bio");
 const bio = bioCollection[0]?.data;
+
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const avatarSrc = bio?.avatar ? `${basePath}/${bio.avatar.replace(/^\//, "")}` : "";
 ---
 
 <aside class="sidebar max-lg:flex-row max-lg:flex-wrap max-lg:gap-3 max-md:gap-2">
     <div class="flex flex-col items-center text-center max-lg:flex-row max-lg:text-left max-lg:gap-3 max-lg:items-center max-md:gap-2">
-        {bio?.avatar && (
-            <Image
-                src={`/${bio.avatar}`}
-                alt={`Avatar of ${bio.name}`}
-                width={160} /* Maximum width in global.css for sidebar-avatar class */
-                height={160}
-                densities={[1.5, 2]} 
-                format="webp"
+        {avatarSrc && (
+            <img
+                src={avatarSrc}
+                alt={`Avatar of ${bio?.name}`}
+                width="160"
+                height="160"
                 class="sidebar-avatar"
                 loading="eager"
             />
@@ -34,20 +34,24 @@ const bio = bioCollection[0]?.data;
             {bio?.shortBio && (
                 <p class="sidebar-bio mt-2 max-md:hidden">{bio.shortBio}</p>
             )}
-            <div class="flex gap-1 flex-wrap items-center justify-center max-lg:justify-start mt-3">
-                {activeSocials.map((social) => (
-                    <a
-                        href={social.href}
-                        aria-label={social.linkTitle}
-                        title={social.linkTitle}
-                        target="_blank"
-                        rel="noreferrer"
-                        class="social-link"
-                    >
-                        <Icon name={SOCIAL_ICONS[social.name] || social.name} size={24} />
-                    </a>
-                ))}
-            </div>
         </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex flex-wrap justify-center gap-2 max-lg:justify-start">
+        {
+            activeSocials.map((social) => (
+                <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="sidebar-social-icon"
+                    aria-label={social.linkTitle || social.name}
+                    title={social.linkTitle || social.name}
+                >
+                    <Icon name={SOCIAL_ICONS[social.name] || social.name} size={28} />
+                </a>
+            ))
+        }
     </div>
 </aside>
