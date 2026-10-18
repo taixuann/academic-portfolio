@@ -1,11 +1,12 @@
 import { getCollection } from 'astro:content';
+import { PAGES } from '../config';
 
 export async function getAllTags() {
-    const publications = await getCollection('publications');
-    const talks = await getCollection('talks');
-    const projects = await getCollection('projects');
-    const posts = await getCollection('posts');
-    const teaching = await getCollection('teaching');
+    const publications = PAGES.publications?.isActive ? await getCollection('publications') : [];
+    const talks = PAGES.talks?.isActive ? await getCollection('talks') : [];
+    const projects = PAGES.projects?.isActive ? await getCollection('projects') : [];
+    const posts = PAGES.blog?.isActive ? await getCollection('posts') : [];
+    const teaching = PAGES.teaching?.isActive ? await getCollection('teaching') : [];
 
     const allEntries = [...publications, ...talks, ...projects, ...posts, ...teaching];
     const tags: Record<string, number> = {};
@@ -28,11 +29,11 @@ export async function getAllTags() {
 export async function getContentByTag(tag: string) {
     const normalizedSearchTag = tag.toLowerCase();
 
-    const publications = await getCollection('publications');
-    const talks = await getCollection('talks');
-    const projects = await getCollection('projects');
-    const posts = await getCollection('posts');
-    const teaching = await getCollection('teaching');
+    const publications = PAGES.publications?.isActive ? await getCollection('publications') : [];
+    const talks = PAGES.talks?.isActive ? await getCollection('talks') : [];
+    const projects = PAGES.projects?.isActive ? await getCollection('projects') : [];
+    const posts = PAGES.blog?.isActive ? await getCollection('posts') : [];
+    const teaching = PAGES.teaching?.isActive ? await getCollection('teaching') : [];
 
     const filterFn = (entry: any) => {
         const entryTags = (entry.data as any).tags || [];

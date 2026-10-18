@@ -1,28 +1,29 @@
 ---
-name: "Claude Shannon"
-avatar: "shannon.jpg"
-shortBio: "Mathematician and electrical engineer known as the 'Father of Information Theory'. Pioneer in digital computing and cryptography."
-institution: "MIT, Cambridge MA"
+name: "Tai Nguyen Xuan"
+avatar: "profile.png"
+shortBio: "Undergraduate Researcher in Advanced Materials Science & Nanotechnology at USTH. Focusing on biomolecular memristive devices, PCET switching, and neuromorphic computing."
+institution: "University of Science and Technology of Hanoi (USTH)"
 ---
 
-I am a mathematician and electrical engineer best known for founding **Information Theory**. My work in the late 1940s established the theoretical foundations of modern digital communications and computing.
+I am an undergraduate researcher in **Advanced Materials Science and Nanotechnology (AMSN)** at the University of Science and Technology of Hanoi (USTH), graduating in August 2026 as class valedictorian (Rank 1st, GPA 17.01/20.00).
 
-## My Life
+My research lies at the intersection of functional nanomaterials, physical electronics, and neuromorphic device physics.
 
-Born in Petoskey, Michigan on April 30, 1916, I showed an early aptitude for engineering and mathematics. After studying at the University of Michigan, I completed my PhD at MIT where I famously applied Boolean algebra to electrical circuits. My master's thesis on relay switching circuits is considered one of the most important master's theses ever written.
+## Research Background
 
-During World War, I worked at Bell Labs on fire control systems and cryptography, which led to my seminal work in information theory.
+At the **Laboratory of Advanced Materials and Application (LAMA, USTH)** under the supervision of Dr. Nguyen Van Quyen, I fabricate and characterize nanoscale crossbar memory junctions. My undergraduate thesis investigates volatile and analog resistive switching in electrodeposited polydopamine (PDA) thin films.
 
-## Current Work
+In June 2026, I conducted research as a **Visiting Research Scholar** at the Molecular Electronics Lab, Guangdong Technion Israel Institute of Technology (GTIIT), examining temporal synaptic plasticity dynamics, short-term plasticity (STP), and XPS chemical states in organic memristors.
 
-I continue to work on various problems at the intersection of mathematics, engineering, and computer science. My interests include artificial intelligence, pattern recognition, game theory, and the fundamental limits of computation.
-
-I also enjoy juggling, unicycling, and playing the clarinet - I even built a juggling machine!
+Beyond memristive switching, I have led the design of a modular low-temperature cryostat system with Python-based transient thermal modeling, and simulated optical and photothermal responses of plasmonic nanosphere arrays using Lumerical FDTD and HEAT.
 
 ## Research Interests
 
-My research focus includes: **Information Theory**, **Cryptography**, **Digital Computing**, **Artificial Intelligence**, **Game Theory**, and **Switching Circuits**.
+- **Neuromorphic Devices & Synaptic Emulation:** Organic memristors, short-term plasticity (STP), paired-pulse facilitation (PPF), and bio-realistic hardware.
+- **Interfacial Switching Physics:** Electric field-driven proton-coupled electron transfer (PCET), redox mechanisms, and thin-film conduction dynamics.
+- **Cryogenic & Electrical Characterization:** Variable-temperature transport, DC I–V hysteresis, fast-pulse measurements, and automated instrumentation routines.
+- **Multiphysics Modeling & Simulation:** Python finite-difference thermal analysis, FDTD optical modeling, and electrochemical transport.
 
 ---
 
-*"I am a mathematician. I am interested in the fundamental limits on the rate at which information can be transmitted."*
+*"Bridging thin-film synthesis, cryogenic characterization, and physical modeling to build scalable, bio-inspired computing devices."*
