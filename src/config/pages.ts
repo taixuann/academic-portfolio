@@ -8,17 +8,12 @@ export const PAGES: PagesConfig = {
     },
     projects: {
         title: "Research Projects",
-        subtitle: "Nanoscale memristors, cryogenic instrumentation, and plasmonic simulations.",
+        subtitle: "Thin-film memristors, cryogenic instrumentation, and computational electrodynamics.",
         isActive: true,
     },
     publications: {
-        title: "Publications",
-        subtitle: "Preprints, submitted manuscripts, and research papers.",
-        isActive: true,
-    },
-    teaching: {
-        title: "Teaching & Mentoring",
-        subtitle: "Physics and chemistry tutoring and STEM outreach leadership.",
+        title: "Publications & Manuscripts",
+        subtitle: "Preprints, submitted manuscripts, and research contributions.",
         isActive: true,
     },
     cv: {
@@ -30,6 +25,11 @@ export const PAGES: PagesConfig = {
         title: "Tags",
         subtitle: "Explore content by topic.",
         isActive: true,
+    },
+    teaching: {
+        title: "Teaching & Mentoring",
+        subtitle: "Academic tutoring and outreach.",
+        isActive: false,
     },
     blog: {
         title: "Blog",

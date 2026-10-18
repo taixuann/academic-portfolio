@@ -11,56 +11,69 @@ interface Props {
     extraInput?: string;
     tags?: string[];
     externalUrl?: string;
+    image?: string;
 }
 
-const { title, href, description, date, authors, extraInput, tags, externalUrl } = Astro.props;
+const { title, href, description, date, authors, extraInput, tags, externalUrl, image } = Astro.props;
+
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const imageSrc = image ? (image.startsWith("http") ? image : `${basePath}/${image.replace(/^\//, "")}`) : undefined;
 ---
 
-<article class="card">
-    <div class="card-content">
-        <a href={href} class="card-title">{title}</a>
+<article class="card flex flex-col sm:flex-row gap-5 items-start justify-between py-6 border-b border-border/50 last:border-b-0 group">
+    <div class="card-content flex-1 min-w-0">
+        <a href={href} class="card-title text-xl font-bold hover:text-accent transition-colors block">
+            {title}
+        </a>
 
-        <div class="card-meta">
+        <div class="card-meta flex flex-wrap items-center gap-3 text-sm opacity-85 my-2">
             {date && (
-                <span class="flex items-center gap-1">
-                    <Icon name="Calendar" size={24} />
+                <span class="flex items-center gap-1.5 font-medium">
+                    <Icon name="Calendar" size={16} />
                     <span>{date}</span>
                 </span>
             )}
             {authors && (
-                <span class="flex items-center gap-1">
-                    <Icon name="User" size={24} />
+                <span class="flex items-center gap-1.5 font-medium text-foreground">
+                    <Icon name="User" size={16} />
                     <span>{authors}</span>
                 </span>
             )}
             {extraInput && (
-                <span class="flex items-center gap-1">
-                    <Icon name="Institution" size={24} />
+                <span class="flex items-center gap-1.5 italic text-accent font-medium">
+                    <Icon name="Institution" size={16} />
                     <span>{extraInput}</span>
                 </span>
             )}
         </div>
 
-        {
-            tags && tags.length > 0 && (
-                <div class="flex gap-2 flex-wrap mb-3">
-                    {tags.map((tag) => (
-                        <Tag name={tag} size="sm" />
-                    ))}
-                </div>
-            )
-        }
+        {tags && tags.length > 0 && (
+            <div class="flex gap-1.5 flex-wrap my-2.5">
+                {tags.map((tag) => (
+                    <Tag name={tag} size="sm" />
+                ))}
+            </div>
+        )}
 
-        {description && <p class="card-desc">{description}</p>}
-    </div>
+        {description && <p class="card-desc text-sm opacity-90 line-clamp-3 mt-1 leading-relaxed">{description}</p>}
 
-    {
-        externalUrl && (
-            <div class="flex-shrink-0">
-                <a href={externalUrl} target="_blank" rel="noopener noreferrer" class="card-link">
-                    View
+        {externalUrl && (
+            <div class="mt-3">
+                <a href={externalUrl} target="_blank" rel="noopener noreferrer" class="card-link text-sm font-semibold text-accent hover:underline inline-flex items-center gap-1">
+                    View Resource &rarr;
                 </a>
             </div>
-        )
-    }
+        )}
+    </div>
+
+    {imageSrc && (
+        <a href={href} class="shrink-0 w-full sm:w-48 md:w-56 h-36 rounded-lg overflow-hidden border border-border bg-surface group-hover:border-accent transition-colors block">
+            <img
+                src={imageSrc}
+                alt={title}
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+            />
+        </a>
+    )}
 </article>
