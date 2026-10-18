@@ -1,6 +1,6 @@
 ---
 name: "Tai Nguyen Xuan"
-avatar: "profile.png"
+avatar: "professional-photo.jpg"
 shortBio: "Undergraduate Researcher in Advanced Materials Science & Nanotechnology at USTH. Focusing on biomolecular memristive devices, PCET switching, and neuromorphic computing."
 institution: "University of Science and Technology of Hanoi (USTH)"
 ---

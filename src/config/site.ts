@@ -5,7 +5,7 @@ export const SITE: SiteConfig = {
     author: "Tai Nguyen Xuan",
     desc: "Academic portfolio of Tai Nguyen Xuan: Undergraduate Researcher in Advanced Materials Science & Nanotechnology at USTH.",
     title: "Tai Nguyen Xuan | Academic Portfolio",
-    ogImage: "profile.png",
+    ogImage: "professional-photo.jpg",
     postPerPage: 5,
     favicon: "/favicon.svg",
     lang: "en",
