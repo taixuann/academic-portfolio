@@ -44,11 +44,11 @@ The cryostat architecture was designed using parametric 3D CAD modeling, structu
 3. **Demountable Vacuum Chamber & Shroud (AISI 304 Stainless):**
    - Cylindrical outer jacket ($\varnothing 114\text{ mm}$ OD, $3\text{ mm}$ wall) providing thermal vacuum insulation ($< 2 \times 10^{-5}\text{ mbar}$).
    - Demountable lower flange connection allowing the outer chamber to slide downward, fully exposing the internal sample stage.
-4. **Cryogenic Sample Stage & Modular Carrier (Cu-OFHC / FR-4 / Pt100):**
-   - High-mass copper block ($40 \times 50 \times 30\text{ mm}$) in direct mechanical contact with the cold finger tip.
-   - Embedded Pt100 RTD resistance thermometer coupled with Apiezon N cryogenic thermal grease.
-   - $50\text{ W}$ stainless cartridge heater for closed-loop PID temperature control ($77\text{ K} - 350\text{ K}$).
-   - Modular green FR-4 PCB carrier with gold-plated contact pads and spring-loaded beryllium-copper Z-spring contact pins.
+4. **L-Shaped OFHC Copper Sample Holder (Cu-OFHC / Pt100 / Cartridge Heater):**
+   - High-mass solid OFHC copper block ($40 \times 50 \times 30\text{ mm}$) machined in an L-shape for reduced thermal mass and direct NPT threaded coupling to the cold finger tip.
+   - Precision recessed cavity housing the 4-wire Pt100 RTD platinum resistance thermometer coupled with Apiezon N cryogenic grease.
+   - Dedicated cylindrical bore for the $20\text{ W} / 50\text{ W}$ stainless cartridge heater for closed-loop PID temperature regulation ($77\text{ K} - 350\text{ K}$).
+   - Polished copper mounting face for direct chip attachment with brass clamping fixtures.
 5. **Cryogen Dewar & Superinsulation Vessel:**
    - Double-walled stainless steel dewar ($\varnothing 384\text{ mm}$, $H = 600\text{ mm}$) containing 30 layers of aluminized Mylar Multi-Layer Insulation (MLI) in pervacuum.
 
@@ -69,12 +69,12 @@ Steady-state and transient finite-difference thermal simulations in Python to ev
 
 ---
 
-## 3. Cryogenic PCB & Electronic Interfacing
+## 3. Electronic Interfacing & Sensor Instrumentation
 
-Designed custom sample breakout PCBs with matched trace impedances, low-temperature solder connections, and triaxial feedthrough integration for low-noise high-impedance device characterization.
+Quad-twist phosphor-bronze wiring ($32\text{ AWG}$ for heater power, $36\text{ AWG}$ for sensor/signal measurements) routed through the central column to the top hermetic DB-25 feedthrough, preventing laboratory electromagnetic interference while suppressing parasitic thermal conduction down the neck.
 
-![Custom Cryogenic PCB](/academic-portfolio/images/projects/cryostat/cryostat_pcb_front.png)
-*Custom cryogenic breakout board layout and multi-terminal sample mounting topology designed in KiCad.*
+- **Sensor Integration:** 4-wire Pt100 Class A platinum RTD mounted in the sample holder's recessed pocket, providing sub-Kelvin temperature feedback.
+- **Closed-Loop PID Control:** Custom PWM circuit driving a $20\text{ W} / 50\text{ W}$ cartridge heater to maintain precise isothermal setpoints between $77\text{ K}$ and $350\text{ K}$.
 
 ![Sample Stage Assembly](/academic-portfolio/images/projects/cryostat/cryostat_sample_assembly.png)
 *Close-up of sample mounting assembly, integrated Pt100 RTD sensor, and low-temperature wiring.*
