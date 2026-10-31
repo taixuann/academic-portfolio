@@ -4,7 +4,7 @@ import BaseLayout from "./BaseLayout.astro";
 import BackLink from "../components/ui/BackLink.astro";
 import Tag from "../components/ui/Tag.astro";
 import Icon from "../components/ui/Icon.astro";
-import CryostatInteractiveCad from "../components/cryostat/CryostatInteractiveCad.astro";
+import AcademicPosterViewer from "../components/cryostat/AcademicPosterViewer.astro";
 import { getDetailItem } from "../utils/adapters";
 import { SITE } from "../config";
 
@@ -68,7 +68,7 @@ const ogImage = entry.data.image || SITE.ogImage;
 
         {collection === "projects" && id === "low-temperature-cryostat-system" && (
             <div class="not-prose my-6">
-                <CryostatInteractiveCad />
+                <AcademicPosterViewer />
             </div>
         )}
 

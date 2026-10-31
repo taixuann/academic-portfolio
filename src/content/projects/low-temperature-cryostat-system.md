@@ -15,7 +15,7 @@ image: "/images/projects/cryostat/cryostat_overview_design.png"
 
 Investigating emergent quantum mechanisms and low-temperature resistive switching requires low-vibration, variable-temperature transport down to liquid nitrogen temperatures ($77\text{ K}\text{--}350\text{ K}$). This project developed an open-architecture cryogenic characterization platform featuring modular sample holders, radiation shielding, hermetic feedthroughs, and automated thermal-electrical acquisition.
 
-Use the **Interactive CAD Subassembly Explorer** above to toggle between **Assembly**, **Exploded View** (separating the top feedthrough, central cold column, outer vacuum chamber, and Cu stage), and **Thermal Cooldown Mode** ($300\text{ K} \to 77\text{ K}$).
+Inspect the full-resolution **Academic Conference Poster** above (click to expand in fullscreen or download the print-ready PDF vector) showcasing the mechanical architecture, thermodynamic models, PID temperature regulation, and in-situ electrical transport characterization.
 
 ## Core Research Questions
 
